@@ -9,6 +9,12 @@ pipeline {
         sh " docker build . -t padmarajmanne108/nodeapp:${DOCKER_TAG}"
       }
     }
+    stage('Docker Push'){
+      withCredentials([string(credentialsId: 'docker-pwd', variable: 'docker-pwd')]) {
+           sh "docker login -U padmarajmanne108 -p ${docker-pwd}"
+           sh "docker push padmarajmanne108/nodeapp:${DOCKER_TAG}"
+      }
+    }
   }
 }
 
