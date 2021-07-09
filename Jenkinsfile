@@ -15,6 +15,7 @@ pipeline{
                sh "docker login -u padmarajmanne108 -p ${dockerpwd}"
                sh "docker push padmarajmanne108/nodeapp:${DOCKER_TAG}"
       }
+	  }
     }
   }
 }
