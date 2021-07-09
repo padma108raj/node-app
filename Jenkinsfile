@@ -9,6 +9,8 @@ pipeline{
         sh "docker build . -t padmarajmanne108/nodeapp:${DOCKER_TAG}"
       }
     }
+    stage("Pushing image to docker hub"){
+         
   }
 }
 
